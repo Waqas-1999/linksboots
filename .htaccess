@@ -1,0 +1,34 @@
+# Links Boots — Apache configuration
+
+ErrorDocument 404 /link-motion/404.php
+
+# Directory listings off
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  # Strip index.php from URLs so /link-building/ is the canonical form
+  RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.php[\s?] [NC]
+  RewriteRule ^(.*/)?index\.php$ /link-motion/$1 [R=301,L]
+</IfModule>
+
+# Never serve raw source or data files
+<FilesMatch "\.(log|md|json)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain application/javascript image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css            "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/svg+xml       "access plus 1 year"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
