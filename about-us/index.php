@@ -55,10 +55,10 @@ hero_inner([
       <article class="person reveal">
         <div class="person-photo">AS</div>
         <div>
-          <h3>Ali Sher</h3>
+          <h3>Muhammad Waqas</h3>
           <p class="role">Founder &amp; CEO &middot; 5+ Years in Digital Marketing</p>
-          <p>Ali has spent more than five years in digital marketing, building experience across everything from ambitious startups to established enterprise brands. Through every shift in search the approach has stayed the same: do the work properly, maintain real standards, and think about the client&rsquo;s long-term growth rather than the next invoice. That philosophy became Links Boots.</p>
-          <p>Active in the wider search community and a regular at industry events including BrightonSEO, Ali stays close to how search keeps changing so client strategies never fall a step behind it.</p>
+          <p>Waqas has spent more than five years in digital marketing, building experience across everything from ambitious startups to established enterprise brands. Through every shift in search the approach has stayed the same: do the work properly, maintain real standards, and think about the client&rsquo;s long-term growth rather than the next invoice. That philosophy became Links Boots.</p>
+          <p>Active in the wider search community and a regular at industry events including BrightonSEO, Waqas stays close to how search keeps changing so client strategies never fall a step behind it.</p>
           <ul class="person-stats">
             <li>5+ years in digital marketing</li>
             <li>UK &middot; USA &middot; Europe</li>

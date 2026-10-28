@@ -1,33 +1,33 @@
 /* tastemaker: macro=editorial-zigzag | hero=split-photo+channel-index | mood=premium-warm |
-   palette=ranklizer-derived (espresso #191106, cream #F7F3EA, gold #C9A84B/#E8D08A, text-gold #7A5E1C) |
-   type=Fraunces/Manrope | contrast: ink/cream 17:1, text-gold/cream 5.6:1, gold-lt/espresso 11:1 */
+   palette=black-white-gold (black #0A0A0A, white #FFFFFF, gold #D4AF37/#E9C96B, text-gold #8A6A12) |
+   type=Space Grotesk/Manrope | contrast: black/white 19.8:1, black-on-gold 10:1, text-gold/white 5.2:1 */
 
 /* ==========================================================================
    Links Boots — design system
-   Espresso ink, warm cream paper, one gold accent. Flat surfaces, hairline
-   rules, small radii. Gold is used for emphasis and actions, never as a glow.
+   Black ink, white paper, one gold accent. Flat surfaces, hairline
+   rules, small radii. The accent is used for emphasis and actions, never as a glow.
    ========================================================================== */
 
 :root{
-  --gold:        #C9A84B;
-  --gold-lt:     #E8D08A;
-  --gold-600:    #7A5E1C;   /* text-safe gold on cream */
-  --gold-050:    #F4ECD6;
+  --gold:        #D4AF37;
+  --gold-lt:     #E9C96B;
+  --gold-600:    #8A6A12;   /* text-safe accent on cream */
+  --gold-050:    #FAF4E1;
 
-  --ink:         #191106;
-  --ink-800:     #2A1F12;
-  --ink-700:     #3B2C1A;
-  --body:        #463A2C;
-  --muted:       #6B5F52;
-  --line:        #E4DAC6;
-  --line-strong: #CFC2A8;
+  --ink:         #0A0A0A;
+  --ink-800:     #161616;
+  --ink-700:     #242424;
+  --body:        #1F1F1F;
+  --muted:       #5C5C5C;
+  --line:        #E6E6E6;
+  --line-strong: #C8C8C8;
   --line-dark:   rgba(255,255,255,.12);
-  --paper:       #FBF8F1;
-  --paper-2:     #F4EEE1;
+  --paper:       #FFFFFF;
+  --paper-2:     #F6F6F4;
   --white:       #FFFFFF;
 
   /* display serif for headlines; one grotesk for UI labels and body */
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-display: 'Space Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-head: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-body: 'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
@@ -149,10 +149,10 @@ p:last-child{margin-bottom:0}
 
 /* ---------------------------------------------------------------- header */
 /* utility bar scrolls away; the main bar below stays pinned */
-.topbar{background:#120C04;color:rgba(255,255,255,.62);font-size:.84rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.topbar{background:#000000;color:rgba(255,255,255,.62);font-size:.84rem;border-bottom:1px solid rgba(255,255,255,.06)}
 .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:var(--s6);min-height:40px}
 .topbar-note{margin:0;display:flex;align-items:center;gap:10px}
-.topbar .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(201,168,75,.2)}
+.topbar .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 3px rgba(212,175,55,.2)}
 .topbar-links{display:flex;align-items:center;gap:var(--s6)}
 .topbar-links a{display:flex;align-items:center;gap:8px;transition:color .2s var(--ease)}
 .topbar-links a:hover{color:var(--gold-lt)}
@@ -164,14 +164,11 @@ p:last-child{margin-bottom:0}
   transition:background-color .25s var(--ease),border-color .25s var(--ease);
 }
 /* once scrolled, a gold hairline marks the bar instead of a heavy shadow */
-.site-header.is-stuck{background:rgba(25,17,6,.94);border-bottom-color:rgba(201,168,75,.4)}
+.site-header.is-stuck{background:rgba(10,10,10,.94);border-bottom-color:rgba(212,175,55,.4)}
 @supports (backdrop-filter:blur(1px)){.site-header.is-stuck{backdrop-filter:saturate(140%) blur(12px)}}
 .nav{display:flex;align-items:center;gap:var(--s8);height:var(--nav-h);position:relative}
 .brand{display:flex;align-items:center;gap:10px;flex:none}
-.brand svg{width:38px;height:auto}
-.brand-name{font-family:var(--font-head);font-weight:800;font-size:1.12rem;letter-spacing:.02em;line-height:1}
-.brand-name .a{color:#fff}
-.brand-name .b{color:var(--gold-lt);margin-left:.3em}
+.brand-logo{display:block;width:190px;height:auto;flex:none}
 .nav-main{margin-inline:auto}
 .nav-menu{display:flex;align-items:center;gap:var(--s2)}
 .nav-menu > li{position:relative}
@@ -391,7 +388,7 @@ body.nav-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 /* ------------------------------------------------------------ photo band */
 .media-band{position:relative;min-height:clamp(380px,46vw,600px);display:grid;align-items:end;overflow:hidden}
 .media-band > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.media-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(25,17,6,.88) 0%,rgba(25,17,6,.55) 45%,rgba(25,17,6,.1) 100%)}
+.media-band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.88) 0%,rgba(10,10,10,.55) 45%,rgba(10,10,10,.1) 100%)}
 .media-band-body{
   position:relative;z-index:2;color:rgba(255,255,255,.76);
   width:min(100% - 2.5rem,var(--wrap));margin-inline:auto;padding:clamp(48px,7vw,96px) 0;
@@ -579,7 +576,7 @@ body.nav-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
   width:100%;padding:13px 14px;border:1px solid var(--line-strong);border-radius:var(--r-sm);
   background:var(--white);font-size:.98rem;transition:border-color .2s,box-shadow .2s;
 }
-.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 3px rgba(201,168,75,.3)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 3px rgba(212,175,55,.3)}
 .field textarea{min-height:130px;resize:vertical}
 .field-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
 .choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
@@ -643,6 +640,7 @@ body.nav-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 .newsletter .btn:hover{color:#fff;background:transparent}
 .footer-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.3fr;gap:var(--s12);padding-bottom:var(--s16)}
 .footer-brand .brand{margin-bottom:var(--s5)}
+.footer-brand .brand-logo{width:240px}
 .footer-brand p{font-size:.95rem;max-width:38ch}
 .socials{display:flex;gap:var(--s4);margin-top:var(--s6)}
 .socials a{color:rgba(255,255,255,.65);transition:color .2s}
@@ -731,8 +729,10 @@ body.nav-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
 /* ------------------------------------------------------- header breakpoints */
 @media (max-width:1200px){
   .nav-call span{display:none}
+  .brand-logo{width:170px}
 }
 @media (max-width:960px){
+  .brand-logo{width:155px}
   .nav-main{margin:0}
   .nav-actions{margin-left:auto}
   .nav-call{display:none}
@@ -742,6 +742,7 @@ body.nav-open .nav-toggle span::after{top:0;transform:rotate(-45deg)}
   .nav-mobile-contact svg{width:16px;height:16px;color:var(--gold-lt)}
 }
 @media (max-width:720px){
+  .brand-logo{width:145px}
   .topbar-note{font-size:.78rem}
   .topbar-links{display:none}
 }
@@ -754,7 +755,7 @@ body.nav-open .topbar{display:none}
   position:absolute;top:100%;left:50%;transform:translate(-50%,6px);
   width:min(100vw - 32px,1240px);
   background:var(--white);border:1px solid var(--line);border-top:2px solid var(--gold);
-  border-radius:0 0 var(--r) var(--r);box-shadow:0 30px 60px -30px rgba(25,17,6,.4);
+  border-radius:0 0 var(--r) var(--r);box-shadow:0 30px 60px -30px rgba(10,10,10,.4);
   opacity:0;visibility:hidden;pointer-events:none;
   transition:opacity .18s var(--ease),transform .18s var(--ease),visibility .18s;
 }
@@ -804,11 +805,11 @@ body.nav-open .topbar{display:none}
 .hero-home{
   min-height:calc(90vh - var(--nav-h));min-height:calc(90svh - var(--nav-h));
   display:flex;flex-direction:column;overflow:hidden;isolation:isolate;
-  background-color:#1B1208;
+  background-color:#111111;
   background-image:
-    radial-gradient(ellipse 42% 55% at 0% 0%,rgba(201,168,75,.34),transparent 70%),
-    radial-gradient(ellipse 40% 50% at 100% 0%,rgba(170,128,20,.30),transparent 70%),
-    repeating-linear-gradient(90deg,transparent 0 93px,rgba(232,208,138,.07) 93px 94px);
+    radial-gradient(ellipse 42% 55% at 0% 0%,rgba(212,175,55,.34),transparent 70%),
+    radial-gradient(ellipse 40% 50% at 100% 0%,rgba(212,175,55,.30),transparent 70%),
+    repeating-linear-gradient(90deg,transparent 0 93px,rgba(233,201,107,.07) 93px 94px);
   padding:0;
 }
 .hero-home-inner{
@@ -836,7 +837,7 @@ body.nav-open .topbar{display:none}
 @keyframes waveDraw{to{stroke-dashoffset:0}}
 
 /* logo band */
-.hero-band{position:relative;z-index:2;height:90px;background:#3E2D0E;display:flex;align-items:center;overflow:hidden}
+.hero-band{position:relative;z-index:2;height:90px;background:#111111;display:flex;align-items:center;overflow:hidden}
 .hero-band .logos{border:0;padding:0}
 .marquee{width:100%;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .marquee-track{display:flex;width:max-content;gap:65px;animation:marquee 40s linear infinite}

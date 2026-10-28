@@ -24,13 +24,13 @@ $posts = all_posts();
   <!-- two gold growth lines along the bottom edge, as on the reference -->
   <svg class="hero-wave hero-wave-a" viewBox="0 0 1440 532" preserveAspectRatio="none" aria-hidden="true">
     <defs><linearGradient id="hwA" x1="1441" y1="306" x2="489" y2="1125" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#AA8014"/><stop offset=".32" stop-color="#E8D08A"/><stop offset=".39" stop-color="#D8B858"/>
-      <stop offset=".68" stop-color="#D2AC55"/><stop offset=".75" stop-color="#E8D08A"/><stop offset=".91" stop-color="#957427"/><stop offset="1" stop-color="#7D5C15"/>
+      <stop stop-color="#A8841F"/><stop offset=".32" stop-color="#E9C96B"/><stop offset=".39" stop-color="#F3DC8C"/>
+      <stop offset=".68" stop-color="#E0BD55"/><stop offset=".75" stop-color="#E9C96B"/><stop offset=".91" stop-color="#957427"/><stop offset="1" stop-color="#7D5C15"/>
     </linearGradient></defs>
     <path d="M-94 528C110 528 126 287 178 265C229 244 260 396 335 455C409 513 431 426 527 415C623 404 738 455 785 455C832 455 861 357 891 357C922 357 957 454 1006 508C1093 604 1132 170 1191 226C1250 281 1286 69 1453 4" fill="none" stroke="url(#hwA)" stroke-width="8"/>
   </svg>
   <svg class="hero-wave hero-wave-b" viewBox="0 0 1440 532" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M-60 520C140 500 210 340 300 360C390 380 420 470 540 470C660 470 700 380 820 390C940 400 960 480 1080 440C1200 400 1250 230 1460 120" fill="none" stroke="#C9A84B" stroke-opacity=".35" stroke-width="3"/>
+    <path d="M-60 520C140 500 210 340 300 360C390 380 420 470 540 470C660 470 700 380 820 390C940 400 960 480 1080 440C1200 400 1250 230 1460 120" fill="none" stroke="#D4AF37" stroke-opacity=".35" stroke-width="3"/>
   </svg>
 
   <!-- the reference's client-logo band; ours lists disciplines until real logos are cleared -->

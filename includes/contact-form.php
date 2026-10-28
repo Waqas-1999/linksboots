@@ -39,6 +39,8 @@ $picked = (array) ($form_old['services'] ?? []);
     <div class="alert alert-ok"><?= icon('check') ?><span>Great! We&rsquo;ve received your information and will reply within one working day.</span></div>
   <?php elseif ($form_status === 'store_failed'): ?>
     <div class="alert alert-err"><?= icon('plus') ?><span>Something went wrong at our end and your message was not saved. Please email us directly at <a href="mailto:<?= e(SITE_EMAIL) ?>" style="color:inherit;text-decoration:underline"><?= e(SITE_EMAIL) ?></a>.</span></div>
+  <?php elseif ($form_status === 'email_failed'): ?>
+    <div class="alert alert-err"><?= icon('mail') ?><span>Your enquiry was saved, but we couldn&rsquo;t send the email notification. Please email us directly at <a href="mailto:<?= e(SITE_EMAIL) ?>" style="color:inherit;text-decoration:underline"><?= e(SITE_EMAIL) ?></a>.</span></div>
   <?php elseif ($form_status === 'error'): ?>
     <div class="alert alert-err"><?= icon('plus') ?><span>We couldn&rsquo;t process your submission. Please check the highlighted fields and retry.</span></div>
   <?php endif; ?>

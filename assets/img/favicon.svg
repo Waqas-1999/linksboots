@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Links Boots">
   <!-- Rising bars + growth arrow, gold on an espresso tile -->
-  <defs><linearGradient id="lb-fav" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#3B2C1A"/><stop offset="1" stop-color="#1E160C"/></linearGradient></defs>
+  <defs><linearGradient id="lb-fav" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#242424"/><stop offset="1" stop-color="#0A0A0A"/></linearGradient></defs>
   <rect width="200" height="200" rx="46" fill="url(#lb-fav)"/>
-    <rect x="40" y="118" width="26" height="42" rx="6" fill="#E8D08A" opacity=".55"/>
-    <rect x="80" y="94" width="26" height="66" rx="6" fill="#E8D08A" opacity=".8"/>
-    <rect x="120" y="70" width="26" height="90" rx="6" fill="#E8D08A"/>
-    <path d="M38 104 L84 64 L108 84 L150 44" fill="none" stroke="#C9A84B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M124 40 L158 36 L154 70 Z" fill="#C9A84B" stroke="#C9A84B" stroke-width="6" stroke-linejoin="round"/>
+    <rect x="40" y="118" width="26" height="42" rx="6" fill="#E9C96B" opacity=".55"/>
+    <rect x="80" y="94" width="26" height="66" rx="6" fill="#E9C96B" opacity=".8"/>
+    <rect x="120" y="70" width="26" height="90" rx="6" fill="#E9C96B"/>
+    <path d="M38 104 L84 64 L108 84 L150 44" fill="none" stroke="#D4AF37" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M124 40 L158 36 L154 70 Z" fill="#D4AF37" stroke="#D4AF37" stroke-width="6" stroke-linejoin="round"/>
 </svg>
