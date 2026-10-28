@@ -14,7 +14,7 @@ define('SITE_DESC',      'Links Boots helps brands overcome digital growth chall
 // TODO: replace these five values with the real business details.
 define('SITE_PHONE',      '+44 20 7946 0123');
 define('SITE_PHONE_HREF', '+442079460123');
-define('SITE_EMAIL',      'info@linksboots.com');
+define('SITE_EMAIL',      'sales@linksboots.com');
 define('SITE_ADDRESS',    'Suite 12, 8 Kings Road, Brighton, UK BN1 1NA');
 // Booking link. Point this at your Calendly/scheduling URL when you have one;
 // until then it lands on the contact form, which works from every page.
@@ -38,6 +38,7 @@ define('SOCIAL_YOUTUBE',   '#');
 function base_path(): string {
     static $base = null;
     if ($base !== null) return $base;
+    if (getenv('VERCEL')) return $base = '';
 
     $docRoot = str_replace('\\', '/', realpath($_SERVER['DOCUMENT_ROOT'] ?? ''));
     $siteDir = str_replace('\\', '/', realpath(__DIR__ . '/..'));

@@ -54,22 +54,12 @@ function icon(string $name, string $class = ''): string {
          . 'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . $d . '</svg>';
 }
 
-/** The Links Boots lockup: logo mark + wordmark. */
+/** The shared Links Boots logo used by the header and footer. */
 function brand_lockup(string $href = null): string {
     $href = $href ?? url();
     ob_start(); ?>
 <a class="brand" href="<?= e($href) ?>" aria-label="<?= e(SITE_NAME) ?> home">
-  <?php $u = substr(md5($href . mt_rand()), 0, 6); ?>
-  <svg viewBox="0 0 200 200" aria-hidden="true">
-    <defs><linearGradient id="lbg-<?= $u ?>" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#3B2C1A"/><stop offset="1" stop-color="#1E160C"/></linearGradient></defs>
-    <rect width="200" height="200" rx="46" fill="url(#lbg-<?= $u ?>)"/>
-    <rect x="40" y="118" width="26" height="42" rx="6" fill="#E8D08A" opacity=".55"/>
-    <rect x="80" y="94" width="26" height="66" rx="6" fill="#E8D08A" opacity=".8"/>
-    <rect x="120" y="70" width="26" height="90" rx="6" fill="#E8D08A"/>
-    <path d="M38 104 L84 64 L108 84 L150 44" fill="none" stroke="#C9A84B" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-    <path d="M124 40 L158 36 L154 70 Z" fill="#C9A84B" stroke="#C9A84B" stroke-width="6" stroke-linejoin="round"/>
-  </svg>
-  <span class="brand-name"><span class="a">LINKS</span><span class="b">BOOTS</span></span>
+  <img class="brand-logo" src="<?= asset('img/logo-site.png') ?>" alt="<?= e(SITE_NAME) ?>">
 </a>
 <?php return ob_get_clean();
 }

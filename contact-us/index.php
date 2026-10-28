@@ -68,8 +68,41 @@ if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST' && isset($_POST['lm_form'])) {
         }
 
         if ($stored) {
-            $form_status = 'ok';
-            $form_old    = [];
+            $services = $form_old['services'] ?: ['Not specified'];
+            $email_body = implode("\r\n", [
+                'A new enquiry was submitted on the Links Boots website.',
+                '',
+                'Name: ' . $form_old['first_name'] . ' ' . $form_old['last_name'],
+                'Email: ' . $form_old['email'],
+                'Monthly budget: ' . ($form_old['budget'] ?: 'Not specified'),
+                'Services: ' . implode(', ', $services),
+                'How they heard about us: ' . ($form_old['source'] ?: 'Not specified'),
+                '',
+                'Message:',
+                $form_old['message'],
+                '',
+                'Submitted: ' . date(DATE_ATOM),
+            ]);
+            $email_headers = [
+                'From: ' . SITE_NAME . ' <' . SITE_EMAIL . '>',
+                'Reply-To: ' . str_replace(["\r", "\n"], '', $form_old['email']),
+                'Content-Type: text/plain; charset=UTF-8',
+                'X-Mailer: PHP/' . PHP_VERSION,
+            ];
+            $sent = function_exists('mail') && @mail(
+                SITE_EMAIL,
+                'New website enquiry - ' . SITE_NAME,
+                $email_body,
+                implode("\r\n", $email_headers)
+            );
+
+            if ($sent) {
+                $form_status = 'ok';
+                $form_old    = [];
+            } else {
+                error_log('Links Boots: failed to send enquiry notification to ' . SITE_EMAIL);
+                $form_status = 'email_failed';
+            }
         } else {
             error_log('Links Boots: failed to store enquiry from ' . $form_old['email']);
             $form_status = 'store_failed';

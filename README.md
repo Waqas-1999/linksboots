@@ -29,7 +29,7 @@ Everything below is a placeholder. All of it lives in one file,
 | Constant | Currently | Replace with |
 |---|---|---|
 | `SITE_PHONE` / `SITE_PHONE_HREF` | `+44 20 7946 0123` | real number (the `_HREF` is digits only) |
-| `SITE_EMAIL` | `info@linksboots.com` | real inbox |
+| `SITE_EMAIL` | `sales@linksboots.com` | business inbox |
 | `SITE_ADDRESS` | Brighton placeholder | real address |
 | `BOOKING_URL` | the contact form | your Calendly / scheduling link |
 | `SOCIAL_*` (5) | `#` | real profile URLs |
@@ -67,7 +67,7 @@ assets/js/main.js           nav, scroll reveals, counters, FAQ accordions
 assets/js/hero-slider.js    homepage hero carousel (no dependencies)
 assets/js/hero-bg.js        three.js constellation behind the hero
 assets/js/vendor/           three.js r160 (MIT), vendored locally
-assets/img/                 logo mark, full lockup, favicon (all SVG)
+assets/img/                 logo artwork, transparent site logo and favicon
 assets/img/photos/          section, pillar and blog photography (Pexels)
 assets/img/people/          testimonial headshots (Pexels)
 ```
@@ -85,32 +85,27 @@ index and sitemap all pick it up automatically from `nav_services()`.
 
 ## The logo
 
-Rebuilt as SVG from the artwork you supplied, so it stays sharp at any size:
-
-- `assets/img/logo-mark.svg` — the LM monogram
-- `assets/img/logo.svg` — monogram plus wordmark
-- `assets/img/favicon.svg` — square version for the browser tab
-
-The header and footer render the mark inline (via `brand_lockup()`) with the
-"LINKS**BOOTS**" wordmark as live text, so it stays crisp and selectable.
-
-Brand colours, taken from the logo, are the top of `assets/css/style.css`:
-`--cyan: #22D3EE`, `--blue: #3B82F6`, on `--ink: #0B1220`.
+The supplied logo artwork is used across the site. `assets/img/logo-site.png` is
+the transparent web-ready lockup displayed by the shared header and footer
+through `brand_lockup()`. `assets/img/favicon.png` uses its mark for browser and
+home-screen icons. The original `assets/img/logo.png` is kept unchanged.
 
 ## The contact form
 
-Submissions from any page post to `/contact-us/`, which validates them and appends a
-JSON line to `data/enquiries.log`. The form deliberately reports success only when the
-write actually succeeded — a form that says "we received your information" while
-storing nothing is worse than one that errors.
+Submissions from any page post to `/contact-us/`, which validates them, appends a JSON
+line to `data/enquiries.log`, and emails the enquiry to `SITE_EMAIL` (`sales@linksboots.com`).
+The submitter sees success only when the enquiry is stored and the email is accepted by
+PHP's configured mail transport. If email delivery fails, the enquiry remains logged
+and the form tells the submitter to contact the sales address directly.
 
 A hidden honeypot field catches bots; their submissions are accepted silently and not
 stored. `data/`, `includes/` and `templates/` are blocked from the web by `.htaccess`,
 so the enquiry log is not publicly readable.
 
-**There is no email sending.** Enquiries only land in the log file. To get them by
-email, add a `mail()` or SMTP call next to the `file_put_contents` in
-`contact-us/index.php` — XAMPP needs an SMTP server configured in `php.ini` first.
+Configure an SMTP-capable mail transport on the web server before going live. XAMPP's
+default `SMTP=localhost` setting does not deliver email unless a mail server is running
+locally; configure `php.ini` or the hosting provider's mail transport and restart PHP
+after changes. The form logs failed notifications and does not report them as delivered.
 
 ## The homepage hero
 

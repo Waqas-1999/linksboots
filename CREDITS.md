@@ -75,7 +75,7 @@ Child service pages reuse their pillar's photo.
 
 ## A note on the founder
 
-Ali Sher is shown with an initial monogram, **not** a stock photo, and that is
+Muhammad Waqas is shown with an initial monogram, **not** a stock photo, and that is
 deliberate: putting a stranger's face next to a real named person misrepresents who
 they are. Drop a real photograph into `assets/img/people/` and swap the
 `.person-photo` block in `about-us/index.php` when you have one.

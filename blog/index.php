@@ -8,7 +8,7 @@ $page_desc  = 'Practical writing on SEO, link building, digital PR and AI visibi
 require __DIR__ . '/../includes/header.php';
 
 $posts = all_posts();
-
+  
 // Collect every tag for the filter row.
 $tags = [];
 foreach ($posts as $p) { foreach ($p['tags'] as $t) { $tags[$t] = true; } }

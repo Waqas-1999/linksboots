@@ -17,17 +17,18 @@ $services   = nav_services();
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title><?= e($page_title) ?></title>
 <meta name="description" content="<?= e($page_desc) ?>">
-<meta name="theme-color" content="#1E160C">
-<link rel="icon" href="<?= asset('img/favicon.svg') ?>" type="image/svg+xml">
+<meta name="theme-color" content="#000000">
+<link rel="icon" href="<?= asset('img/favicon.png') ?>" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="<?= asset('img/favicon.png') ?>">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="<?= e(SITE_NAME) ?>">
 <meta property="og:title" content="<?= e($page_title) ?>">
 <meta property="og:description" content="<?= e($page_desc) ?>">
-<meta property="og:image" content="<?= asset('img/logo.svg') ?>">
+<meta property="og:image" content="<?= asset('img/logo-site.png') ?>">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
 <script type="application/ld+json">
 <?= json_encode([

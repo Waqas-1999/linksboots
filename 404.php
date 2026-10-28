@@ -13,7 +13,7 @@ require __DIR__ . '/includes/header.php';
   <div class="wrap">
     <div class="hero-home">
       <span class="pill reveal"><b>404</b> Page not found</span>
-      <h1 class="reveal">This Page Went <span class="gradient-text">Missing</span></h1>
+      <h1 class="reveal">This Page Went  <span class="gradient-text">Missing</span></h1>
       <p class="lead reveal">The link is broken or the page has moved. Nothing here is lost for good &mdash; try one of these instead.</p>
       <div class="btn-row reveal">
         <a class="btn btn-primary btn-lg" href="<?= url() ?>">Back to Home <?= icon('arrow') ?></a>
